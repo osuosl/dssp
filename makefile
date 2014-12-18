@@ -22,7 +22,7 @@ BIN_DIR				= $(DEST_DIR)/bin
 MAN_DIR				= $(DEST_DIR)/man/man1
 
 BOOST_LIBS			= thread filesystem program_options iostreams system
-LIBS				= $(BOOST_LIBS:%=boost_%$(BOOST_LIB_SUFFIX)) z bz2
+LIBS				= $(BOOST_LIBS:%=boost_%$(BOOST_LIB_SUFFIX)) z bz2 rt
 
 DEFINES				= USE_COMPRESSION LINUX VERSION='"$(VERSION)"'
 CXX					= g++
