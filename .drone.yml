@@ -1,0 +1,9 @@
+image: osl_test/dssp
+script:
+    - cd boost_1_57_0
+    - ./bootstrap.sh
+    - ./b2 install
+    - cd ..
+    - make
+
+
