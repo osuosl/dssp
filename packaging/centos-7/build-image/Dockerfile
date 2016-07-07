@@ -1,12 +1,12 @@
-FROM alanfranz/fwd-centos-6:latest
+FROM alanfranz/fwd-centos-7:latest
 MAINTAINER support@osuosl.org
 RUN yum -y install \
-    automake \
     gcc \
     gcc-c++ \
     glibc \
     glibc-devel \
     glibc-static \
+    libstdc++-static \
     make \
     tar \
     wget \
