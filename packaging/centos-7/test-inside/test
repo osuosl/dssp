@@ -1,0 +1,13 @@
+#!/bin/bash -ex
+# we should always set proper ownership before exiting, otherwise
+# the created logs will have root:root ownership and we'll be unable
+# to delete them from our host.
+trap 'chown -R --reference /test-inside/test /test-logs/' EXIT
+
+#must import public key
+# rpm --import /tmp/public.asc
+
+yum -y install /out/*.rpm
+
+# not exactly sure what makes a good test here
+# perhaps include test files in the repo and run dssp
