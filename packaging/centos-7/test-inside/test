@@ -11,8 +11,11 @@ yum -y install /out/*.rpm
 
 # not exactly sure what makes a good test here
 # perhaps include test files in the repo and run dssp
-mkdssp -i /test-inside/files/pdb3cgz.ent -o /tmp/pdb3cgz.out
-DIFF="$(diff /test-inside/files/pdb3cgz.out /tmp/pdb3cgz.out)"
+mkdssp -i /test-inside/files/pdb3cgz.ent -o /tmp/pdb3cgz.actual
+DATE="$(date +'%Y-%m-%d')"
+sed -e "s/2016-07-07/$DATE/" < /test-inside/files/pdb3cgz.out > /tmp/pdb3cgz.expected
+DIFF="$(diff /tmp/pdb3cgz.actual /tmp/pdb3cgz.expected)"
+rm /tmp/pdb3cgz.actual /tmp/pdb3cgz.expected
 if [ ! -z "$DIFF" ]; then
     echo $PATH
     return 1
