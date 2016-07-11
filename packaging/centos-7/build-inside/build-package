@@ -31,4 +31,4 @@ cd /out
 # echo -e "\n" | setsid fpm -t rpm -s dir -n osuosl-dssp --rpm-sign --version ${VERSION} --description "OSUOSL built DSSP" --depends readline -C / /usr/local/dssp
 
 #this would be the no-signature command line
-fpm -t rpm -s dir -n osuosl-dssp --version ${VERSION} --description "OSUOSL built DSSP" -C /tmp/installdir usr/local
+fpm -t rpm -s dir -n osuosl-dssp --vendor "OSU Open Source Lab" --license "Boost License 1.0" --url "http://www.cmbi.ru.nl/dssp.html" --version ${VERSION} --description "OSUOSL built DSSP" -C /tmp/installdir usr/local
